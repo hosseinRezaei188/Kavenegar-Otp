@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Source/Kavenegar.Otp/obj
+/Source/Kavenegar.Otp/bin/Debug
+/Test/Kavenegar.Otp.Units/obj
+/Test/Kavenegar.Otp.UnitTests/bin/Debug/net8.0
+/Test/Kavenegar.Otp.UnitTests/obj
