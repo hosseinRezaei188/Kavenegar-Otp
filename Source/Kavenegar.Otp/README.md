@@ -19,7 +19,13 @@
 ## برای شروع:
 1. در پنل کاوه نگار یک الگوی اعتبارسنجی ایجاد نمایید. توجه نمایید که الگوی ایجاد شده فقط باید دارای یک `%token` باشد. [لینک صفحه ایجاد الگوی اعتبارسنجی](https://console.kavenegar.com/verification/create)
 2. کتابخانه Kavenegar-otp را از طریق کد زیر به پروژه خود اضافه نمایید.
-3. سرویس KavengearOtp را با استفاده از کد زیر در `Program.cs` وارد نمایید:
+</div>
+
+````
+ dotnet add package Kavenegar.Otp --version 1.0.2
+````
+<div dir="rtl">
+4. سرویس KavengearOtp را با استفاده از کد زیر در `Program.cs` وارد نمایید:
 </div>
 
 
