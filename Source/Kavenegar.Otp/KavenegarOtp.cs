@@ -33,7 +33,7 @@ namespace Kavenegar.Otp
 
                 var otp = new OtpGenerator(_config.Value, phoneNumber).GenerateOtp();
                 await _smsSender.SendOtpSms(phoneNumber, otp);
-                _attemptTracker.IncrementSendAttempts(key);
+                _attemptTracker.IncrementAttempts(key);
             }
             catch (ApiException ex)
             {
@@ -59,7 +59,7 @@ namespace Kavenegar.Otp
 
             if (!isValid)
             {
-                _attemptTracker.IncrementFailedAttempts(key);
+                _attemptTracker.IncrementAttempts(key);
             }
             else
             {

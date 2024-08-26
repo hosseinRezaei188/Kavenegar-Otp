@@ -41,7 +41,7 @@ public class AttemptTrackerTests
         string key = "user1";
         for (int i = 0; i < _config.Value.MaxAttempts; i++)
         {
-            _attemptTracker.IncrementFailedAttempts(key);
+            _attemptTracker.IncrementAttempts(key);
         }
 
         // Act
@@ -58,7 +58,7 @@ public class AttemptTrackerTests
         string key = "user1";
         for (int i = 0; i < _config.Value.MaxAttempts; i++)
         {
-            _attemptTracker.IncrementFailedAttempts(key);
+            _attemptTracker.IncrementAttempts(key);
         }
 
         // Simulate waiting past the lockout duration
@@ -76,7 +76,7 @@ public class AttemptTrackerTests
     {
         // Arrange
         string key = "user1";
-        _attemptTracker.IncrementFailedAttempts(key);
+        _attemptTracker.IncrementAttempts(key);
 
         // Act
         var userAttempts = GetUserAttempts(key);
@@ -91,7 +91,7 @@ public class AttemptTrackerTests
     {
         // Arrange
         string key = "user1";
-        _attemptTracker.IncrementSendAttempts(key);
+        _attemptTracker.IncrementAttempts(key);
 
         // Act
         var userAttempts = GetUserAttempts(key);
@@ -106,7 +106,7 @@ public class AttemptTrackerTests
     {
         // Arrange
         string key = "user1";
-        _attemptTracker.IncrementFailedAttempts(key);
+        _attemptTracker.IncrementAttempts(key);
         _attemptTracker.ResetAttempts(key);
 
         // Act
@@ -123,7 +123,7 @@ public class AttemptTrackerTests
         string key = "user1";
         for (int i = 0; i < _config.Value.MaxAttempts; i++)
         {
-            _attemptTracker.IncrementFailedAttempts(key);
+            _attemptTracker.IncrementAttempts(key);
         }
 
         // Simulate waiting for 10 seconds (not enough to expire the lockout)

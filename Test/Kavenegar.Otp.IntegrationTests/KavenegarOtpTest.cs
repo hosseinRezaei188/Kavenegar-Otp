@@ -48,7 +48,7 @@ public class KavenegarOtpTests
 
         // Assert
         await _smsSender.Received(1).SendOtpSms(phoneNumber, Arg.Any<string>());
-        _attemptTracker.Received(1).IncrementSendAttempts(key);
+        _attemptTracker.Received(1).IncrementAttempts(key);
     }
 
     [Fact]
@@ -96,7 +96,7 @@ public class KavenegarOtpTests
 
         // Assert
         Assert.False(result);
-        _attemptTracker.Received(1).IncrementFailedAttempts(key);
+        _attemptTracker.Received(1).IncrementAttempts(key);
     }
 
     [Fact]

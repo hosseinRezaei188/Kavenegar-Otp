@@ -34,20 +34,7 @@ namespace Kavenegar.Otp.infrastructure
             return false;
         }
 
-        public void IncrementFailedAttempts(string key)
-        {
-            _attempts.AddOrUpdate(
-                key,
-                new UserAttempts { FailedAttempts = 1, LastAttemptTime = DateTime.UtcNow },
-                (_, oldValue) => new UserAttempts
-                {
-                    FailedAttempts = oldValue.FailedAttempts + 1,
-                    LastAttemptTime = DateTime.UtcNow
-                }
-            );
-        }
-
-        public void IncrementSendAttempts(string key)
+        public void IncrementAttempts(string key)
         {
             _attempts.AddOrUpdate(
                 key,
@@ -92,8 +79,7 @@ namespace Kavenegar.Otp.infrastructure
     internal interface IAttemptTracker
     {
         TimeSpan GetRemainingLockoutTime(string key);
-        void IncrementFailedAttempts(string key);
-        void IncrementSendAttempts(string key);
+        void IncrementAttempts(string key);
         bool IsLocked(string key);
         void ResetAttempts(string key);
     }
