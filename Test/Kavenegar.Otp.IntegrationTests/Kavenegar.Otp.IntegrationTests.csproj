@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Kavenegar.Otp\Kavenegar.Otp.csproj" />
+    <ProjectReference Include="..\..\Source\Kavenegar.Otp\Kavenegar.Otp.csproj" />
   </ItemGroup>
 
   <ItemGroup>
